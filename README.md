@@ -49,4 +49,4 @@ It only works for elements that have relative, absolute, fixed or sticky positio
 
 ## Browser Compatibility
 
-Tested ok on FF 45, Chrome 47 e Internet Explorer 11
+Tested ok on Firefox 45, Chrome 47 and Internet Explorer 11
