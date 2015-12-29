@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>jQuery Font Awnsome Loading</title>
+		<link href="external/font-awesome-4.5.0/css/font-awesome.min.css" type="text/css" rel="stylesheet"/>
+		<script type="text/javascript" src="external/jquery.min.js"></script>
+		<link type="text/css" rel="stylesheet" href="jquery.faloading-0.1.min.css"/>
+		<script type="text/javascript" src="jquery.faloading-0.1.min.js"></script>
+		
+		<style type="text/css">
+			#myDiv {
+				min-height: 200px;
+				min-width: 200px;
+				background: #ccc;
+				position: relative;
+			}
+		</style>
+		
+		<script type="text/javascript">
+			var loading_time = 3000;
+			
+			$(function() {
+				
+				$("#btnBodyLoading").click(function() {
+					var $load = $("body").faLoadingAdd('fa-cog');
+					
+					setTimeout(function() {
+						$load.remove();
+					},loading_time);
+				});
+				
+				$("#btnDivLoading").click(function() {
+					
+					$("#myDiv").faLoading();
+					
+					setTimeout(function() {
+						$("#myDiv").faLoadingStop();
+					},loading_time);
+					
+				});
+			});
+		</script>
+	</head>	
+	
+	<body>
+		<button id="btnBodyLoading" type="button">Body Loading</button>
+				
+		<div id="myDiv">
+			<button id="btnDivLoading" type="button">Div Loading</button>
+		</div>
+	</body>
+</html>
