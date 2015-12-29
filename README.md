@@ -41,6 +41,7 @@ To change background and icon color you can override those css rules
 	font-size: 5em; // icon size 
 	margin-top: -2.5em; // must be -50% of the font-size so it'll be always vertically centered
 }
+```
 
 ## Notes
 
