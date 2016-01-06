@@ -5,8 +5,8 @@
 		<title>jQuery Font Awnsome Loading</title>
 		<link href="external/font-awesome-4.5.0/css/font-awesome.min.css" type="text/css" rel="stylesheet"/>
 		<script type="text/javascript" src="external/jquery.min.js"></script>
-		<link type="text/css" rel="stylesheet" href="jquery.faloading-0.1.min.css"/>
-		<script type="text/javascript" src="jquery.faloading-0.1.min.js"></script>
+		<link type="text/css" rel="stylesheet" href="jquery.faloading.min.css"/>
+		<script type="text/javascript" src="jquery.faloading-0.2.min.js"></script>
 		
 		<style type="text/css">
 			#myDiv {
@@ -23,10 +23,10 @@
 			$(function() {
 				
 				$("#btnBodyLoading").click(function() {
-					var $load = $("body").faLoadingAdd('fa-cog');
+					$("body").faLoading('fa-cog');
 					
 					setTimeout(function() {
-						$load.remove();
+						$("body").faLoading(false);
 					},loading_time);
 				});
 				
@@ -35,7 +35,7 @@
 					$("#myDiv").faLoading();
 					
 					setTimeout(function() {
-						$("#myDiv").faLoadingStop();
+						$("#myDiv").faLoading("remove");
 					},loading_time);
 					
 				});
