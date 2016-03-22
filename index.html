@@ -5,8 +5,8 @@
 		<title>jQuery Font Awnsome Loading</title>
 		<link href="external/font-awesome-4.5.0/css/font-awesome.min.css" type="text/css" rel="stylesheet"/>
 		<script type="text/javascript" src="external/jquery.min.js"></script>
-		<link type="text/css" rel="stylesheet" href="jquery.faloading.min.css"/>
-		<script type="text/javascript" src="jquery.faloading-0.2.min.js"></script>
+		<link type="text/css" rel="stylesheet" href="jquery.faloading.css"/>
+		<script type="text/javascript" src="jquery.faloading.js"></script>
 		
 		<style type="text/css">
 			#myDiv {
@@ -18,7 +18,7 @@
 		</style>
 		
 		<script type="text/javascript">
-			var loading_time = 3000;
+			var loading_time = 30000;
 			
 			$(function() {
 				
@@ -32,12 +32,31 @@
 				
 				$("#btnDivLoading").click(function() {
 					
-					$("#myDiv").faLoading();
+					$("#myDiv").faLoading({
+						"type" : "add", 
+					   "icon" : "fa-refresh", 
+					   "status" : 'loading',
+					   "text" : false,
+					   "title" : $("#loadingTitle").val()
+					});
+					
+					$(".btn-update").show();
 					
 					setTimeout(function() {
 						$("#myDiv").faLoading("remove");
-					},loading_time);
+					},loading_time*3);
 					
+				});
+				
+				$(".btn-update")
+				.click(function() {
+					$("#myDiv").faLoading({
+						"type" : "update", 
+					   "icon" :$(this).data('icon'), 
+					   "status" :$(this).data('status'),
+					   "text" : $("#updateText").val(),
+					   "title" : $("#updateTitle").val()
+				  	});	
 				});
 			});
 		</script>
@@ -45,9 +64,17 @@
 	
 	<body>
 		<button id="btnBodyLoading" type="button">Body Loading</button>
-				
 		<div id="myDiv">
 			<button id="btnDivLoading" type="button">Div Loading</button>
 		</div>
+		<br/><br/>
+			<label>Loading Title</label><input type="text" id="loadingTitle" value=""/>
+			<label>Loading Text</label><input type="text" id="loadingText" value="Loading..."/>
+		<br/><br/>
+			<label>Update Title</label><input type="text" id="updateTitle" value="Update Title"/>
+			<label>Update Text</label><input type="text" id="updateText" value="Update Text"/>
+		<br/><br/>
+		<button class="btn-update" type="button" data-icon="fa-check" data-status="success">Update to Success</button>
+		<button class="btn-update" type="button" data-icon="fa-exclamation-triangle" data-status="fail">Update to Fail</button>
 	</body>
 </html>

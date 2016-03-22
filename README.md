@@ -1,8 +1,8 @@
-# jQuery Font Awesome Modal Loading
+# jQuery & Font Awesome Modal Loading
 
 Simple jQuery plugin to add modal loading using Font Awesome spin icons.
 
-Any of the Font Awesome spin icons can be used: https://fortawesome.github.io/Font-Awesome/icons/#spinner
+Any of the Font Awesome icons can be used: https://fortawesome.github.io/Font-Awesome/icons/#spinner
 
 Very simple and ugly demo page: http://alemonteiro.com.br/demos/fa-loading
 
@@ -10,20 +10,47 @@ Very simple and ugly demo page: http://alemonteiro.com.br/demos/fa-loading
 
 ```
 	var $el = $("body"); // or any relative, absolut or fixed positioned element
-	// To add default loading
-	$el.faLoading();
 	
-	// To remove loading
+	// Add default loading
+	$el.faLoading();
+
+	// Add with options or update
+	$el.faLoading(/*object*/options); // See list bellow
+
+	// Remove loading
 	$el.faLoading(false);
 	// or
 	$el.faLoading('remove');
 	
 	// Setting the loading icon
-	$("body").faLoading('fa-spinner');
+	$el.faLoading('fa-spinner');
 	
+	// To Update the Loading to a Succesfull or Failed status
+	$el.faLoading("fail", "Message", "Title");
+	$el.faLoading("success", "Message", "Title");
+
 	// To change the default icon for all loadings
 	$.faLoadingDefaultIcon = 'fa-cog';
 	
+```
+
+## Options
+
+```
+var _defaults = {
+	type: undefined 
+		// type undefined/true/"add" will add loading 
+		// type false/"remove" will remove loading
+		// type "update" will update settings
+	, title: undefined // creates an title bar
+	, icon: "fa-refresh" //  fa icon
+	, spin: false // icon sppining
+	, status : "loading" // text message ( undefined or false for empty )
+	, text : false   // text message ( undefined or false for empty )
+	, timeout : undefined // timeout to close msg
+	, closeCallback: undefined // call back for when the message is closed (by timeout or x button(in case it ever gets one))
+	, closeButton: false // adds and close button
+}
 ```
 
 ## CSS Customization
@@ -54,4 +81,13 @@ Tested ok on Firefox 45, Chrome 47 and Internet Explorer 11
 
 ## Changelog
 
-V 0.2; Remove unnecessary methods and focused "all" functionality on 'faLoading' for better jQuery standarts
+### V 0.3 - 18/03/2016
+```
+Added updated method
+Added default 'success' and 'fail' default updates
+Added title property
+```
+### V 0.2 - 06/01/2016
+```
+Removed unnecessary methods and focused "all" functionality on 'faLoading' for better jQuery standarts
+```
