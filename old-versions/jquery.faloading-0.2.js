@@ -16,17 +16,17 @@
  **/
 
 (function($){
-	
+
 	$.faLoadingDefaultIcon = 'fa-refresh';
-	
+
 	$.fn.extend({
-		
+
 		// Creates the loading and return the last object set
         faLoading: function (loadType) {
 			if (loadType === "remove" || loadType === false) {
 				return $(this).each(function() {
 					$(this).find('div.fa-loading-wrapper').remove();
-				});	
+				});
 			}
 			if ( loadType === undefined || loadType.indexOf("fa-") == -1) {
 				loadType = $.faLoadingDefaultIcon || 'fa-refresh';
@@ -41,5 +41,5 @@
             });
         }
 	});
-	
+
 }(jQuery));

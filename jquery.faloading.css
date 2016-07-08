@@ -8,8 +8,7 @@
  *
  * Licensed under the MIT (LICENSE.txt)
  **/
-
-.jq-fa-loading .fa-loading-modal 
+.jq-fa-loading .fa-loading-modal
 {
     position: absolute;
     top: 0; left: 0;
@@ -17,7 +16,7 @@
     width: 100%;
     height: 100%;
 }
-.jq-fa-loading .fa-loading-content-wrapper 
+.jq-fa-loading .fa-loading-content-wrapper
 {
     position: absolute;
 	top: 10%; left: 0;
@@ -73,7 +72,6 @@
 	text-align: center;
 	margin: 0 auto;
 }
-
 .jq-fa-loading.fail .fa-loading-modal,
 .jq-fa-loading.success .fa-loading-modal  {
 	display: none;
@@ -87,7 +85,7 @@
 	cursor: pointer;
 }
 .jq-fa-loading span.fa-loading-close:after {
-	
+
 }
 .jq-fa-loading span.fa-loading-close:hover {
 	background: rgba(0, 0, 0, 0.5);

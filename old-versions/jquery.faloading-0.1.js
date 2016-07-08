@@ -16,11 +16,11 @@
  **/
 
 (function($){
-	
+
 	$.faLoadingDefaultIcon = 'fa-refresh';
-	
+
 	$.fn.extend({
-		
+
 		// Creates the loading and return the last object set
         faLoading: function (loadType) {
 			if ( loadType === undefined || loadType.indexOf("fa-") == -1) {
@@ -29,7 +29,7 @@
             return $(this).each(function() {
                 var $t = $(this),
 					pos = $t.css('position');
-				
+
                 $t.append('<div class="fa-loading-wrapper">'+
                     '<div class="fa-loading-bg">&nbsp;</div>'+
                     '<div class="fa-loading-icon-wrapper">'+
@@ -38,20 +38,20 @@
                 '</div>');
             });
         },
-		
+
 		// Creates the loading and return it
 		faLoadingAdd: function(loadType) {
 			return $('<div>') // create holder of loading
 					.faLoading(loadType) // create loading
 					.appendTo($(this));
 		},
-		
-		// Remove loading 
+
+		// Remove loading
 		faLoadingStop: function() {
             return $(this).each(function() {
 				$(this).find('div.fa-loading-wrapper').remove();
 			});
 		}
 	});
-	
+
 }(jQuery));

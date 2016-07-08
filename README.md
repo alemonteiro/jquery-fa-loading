@@ -45,7 +45,7 @@ var _defaults = {
 	, title: undefined // creates an title bar
 	, icon: "fa-refresh" //  fa icon
 	, spin: false // icon sppining
-	, status : "loading" // text message ( undefined or false for empty )
+	, status : "loading" // css status class ( css styles are based here )
 	, text : false   // text message ( undefined or false for empty )
 	, timeout : undefined // timeout to close msg
 	, closeCallback: undefined // call back for when the message is closed (by timeout or x button(in case it ever gets one))
